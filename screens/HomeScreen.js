@@ -17,23 +17,22 @@ const HomeScreen = () => {
        // this.setState({ currentUser })
     //}
      
-  return ( 
-    <SafeAreaView>
+ 
     
-      <Text>HomeScreen</Text>
-<TouchableOpacity onPress={()=> navigation.navigate('Profile')}>
-  <Text>profile</Text>
-</TouchableOpacity>
-<View>
-<TouchableOpacity onPress={()=> navigation.navigate('News')}>
-  <Text>
-    Newspage
-  </Text>
-  </TouchableOpacity>
-</View>
-    </SafeAreaView>
-  );
+    
+     
+ 
+    return (
+      
+          <View>
+            <Text>123456</Text>
+          </View> 
+        )
 }
+ 
+ 
+ 
+   
 export default HomeScreen ;
 //<View style={styles.container}><Text>
 //Hi {currentUser && currentUser.email}!

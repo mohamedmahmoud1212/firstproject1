@@ -1,10 +1,12 @@
 import React from 'react';
 import { View , Text , ScrollView, TouchableOpacity,Image } from 'react-native';
-import {Card} from 'react-native-paper';
+import {Button, Card} from 'react-native-paper';
 import { useState , useEffect} from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 const Newspage = () => {
-    const [data,setData] = useState ([])
+  const navigation=useNavigation  ()
+  const [data,setData] = useState ([])
     console.log(data)
     const url="https://newsapi.org/v2/top-headlines?country=eg&category=sports&apiKey=5a7a58387a4d4dcdbc83f98678e5daf0";
     //"https://newsapi.org/v2/top-headlines?country=eg&category=sports&apiKey=5a7a58387a4d4dcdbc83f98678e5daf0";
@@ -24,6 +26,11 @@ const Newspage = () => {
         {Object.keys(data).length > 0 && (
           
     <ScrollView>
+    <View style={{width:70,height:50}}>
+       <TouchableOpacity onPress={()=>navigation.goBack()}>
+            <Image source={require('../assets/back.png')} style={{width : 108 , height : 72 ,marginTop:8 }}/>
+        </TouchableOpacity>
+        </View>
     <View style={{
                
               justifyContent: "space-around",
@@ -38,7 +45,6 @@ const Newspage = () => {
                 
             }} >
        
-      
         {data.articles.map((article, index) => (
           <Card key={index} style={{margin:0.5,Color:'#7467ce', }}>
             <View style={{
@@ -64,8 +70,9 @@ const Newspage = () => {
            
             <Text style={{marginTop:-1}}> {article.description} </Text>
               <Text style={{margin:15}}> {article.publishedAt } </Text>
-              
+               
           </Card>
+          
           
         ))
       }
