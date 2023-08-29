@@ -1,0 +1,40 @@
+import { View, Text, SafeAreaView ,Platform,TouchableOpacity} from 'react-native'
+import React from 'react'
+import { useNavigation } from '@react-navigation/native';
+import{ createNativeStackNavigator } from '@react-navigation/native-stack';
+import  profilepage  from './profilepage.js' 
+import Newspage from './Newspage.js';
+//import firebase from 'react-native-firebase'
+//import { firebaseConfig } from '../config'
+const HomeScreen = () => {
+  const navigation = useNavigation();
+  //state = { currentUser: null }
+    //const { currentUser } = this.state
+    //state = { currentUser: null }
+
+    //const componentDidMount =() => {
+      //  const { currentUser } = firebase.auth()
+       // this.setState({ currentUser })
+    //}
+     
+  return ( 
+    <SafeAreaView>
+    
+      <Text>HomeScreen</Text>
+<TouchableOpacity onPress={()=> navigation.navigate('Profile')}>
+  <Text>profile</Text>
+</TouchableOpacity>
+<View>
+<TouchableOpacity onPress={()=> navigation.navigate('News')}>
+  <Text>
+    Newspage
+  </Text>
+  </TouchableOpacity>
+</View>
+    </SafeAreaView>
+  );
+}
+export default HomeScreen ;
+//<View style={styles.container}><Text>
+//Hi {currentUser && currentUser.email}!
+//</Text></View>
