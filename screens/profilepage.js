@@ -12,7 +12,7 @@ const App = (props) => {
         <TouchableOpacity>
             <Image source={require('../assets/edit.png')} style={{width : 38 , height : 31 , marginVertical : 24 , marginHorizontal : 340}}/>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.goBack()}>
             <Image source={require('../assets/back.png')} style={{width : 108 , height : 72 , marginVertical : -73 , marginHorizontal :-28 }}/>
         </TouchableOpacity>
             <Image source={require('../assets/messi.png')} style={{width : 195 , height :130 , marginTop : 10 , marginLeft :-10 }} />
